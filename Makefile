@@ -140,9 +140,7 @@ validate:
 		make validate
 
 test:
-	docker-compose run \
-		--rm bot \
-		make test
+	docker-compose exec bot_telegram make test
 
 test-nlu:
 	docker-compose run \

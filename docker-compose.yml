@@ -126,7 +126,7 @@ services:
       env_file:
         - env/bot-telegram.env
       ports:
-        - 5001:5001
+        - 5008:5008
       depends_on:
         - actions
       command: sh -c "make telegram"
