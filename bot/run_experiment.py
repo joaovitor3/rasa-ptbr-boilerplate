@@ -4,7 +4,7 @@ import os
 
 mlflow.set_experiment('exp')
 
-# Verify problems with permissions
+# Verify problems with permissions (possible because of missing boto3 dependency)
 # https://stackoverflow.com/questions/52331254/how-to-store-artifacts-on-a-server-running-mlflow
 
 with mlflow.start_run():
