@@ -10,6 +10,8 @@ services:
     restart: unless-stopped
     volumes:
       - ./bot/:/bot/
+    networks:
+      - mlops-boilerplate
     ports:
       - 5004:5004
       - 5005:5005
@@ -43,6 +45,8 @@ services:
       dockerfile: ./docker/actions.Dockerfile
     ports:
       - 5055:5055
+    networks:
+      - mlops-boilerplate
     volumes:
       - ./bot/actions:/bot/actions
     command: sh -c "make actions"
@@ -127,6 +131,8 @@ services:
         - env/bot-telegram.env
       ports:
         - 5008:5008
+      networks:
+        - mlops-boilerplate
       depends_on:
         - actions
       command: sh -c "make telegram"
@@ -198,6 +204,11 @@ services:
         done; (exit $$s)"
     depends_on:
       - mongo
+
+networks:
+  mlops-boilerplate:
+    external: true
+    driver: "bridge"
 
 volumes:
   notebook_models:
