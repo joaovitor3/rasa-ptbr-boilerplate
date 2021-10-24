@@ -1,0 +1,7 @@
+name: rasa-experiment
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    command: "python run_experiment.py"

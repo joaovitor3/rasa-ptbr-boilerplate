@@ -12,6 +12,22 @@ O boilerplate nasceu como uma abstração genérica do projeto [Tais](http://git
 
 Aqui você pode encontrar um chatbot totalmente em Português Brasiliero que vai te auxiliar com exemplos de diálogo, código e uso de funcionalidades do Rasa.
 
+## Configuração do MLFlow
+
+Para realizar a configuração do MLFlow, realize a [configuração do bot com o telegram](/docs/setup_telegram.md) e após isso execute o seguinte comando:
+
+``` sh
+docker-compose -f docker-compose-mlops.yml up
+```
+
+Para executar os experimentos com o MLFlow, execute os seguintes comandos:
+
+```
+docker-compose exec bot_telegram bash
+python run_experiment.py
+``` 
+
+
 ## Arquitetura
 
 A [arquitetura](https://drive.google.com/file/d/1xUojfFGrYubSfmd3tL77XzgZzD6cR-XH/view?usp=sharing) do boilerplate pode ser divida em 2 partes principais:
